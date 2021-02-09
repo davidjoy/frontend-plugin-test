@@ -12,7 +12,7 @@ module.exports = createConfig('webpack-dev', {
       name: 'pluginTest',
       filename: 'remoteEntry.js',
       exposes: {
-        './PluginTestPage': './src/PluginTestPage',
+        './PluginTestPage': './src/plugin/PluginTestPage',
       },
       shared: {
         react: {
