@@ -3,12 +3,12 @@ import { getConfig } from '@edx/frontend-platform';
 
 import './index.scss';
 
-export default function PluginTestPage() {
+export default function PluginTwo() {
   return (
-    <main className="plugin-test-page">
+    <main className="plugin-two">
       <div className="container-fluid">
-        <h1>Plugin Test Page</h1>
-        <p>Hello world!</p>
+        <h1>Plugin Two</h1>
+        <p>Hello blue world!</p>
         <p>{getConfig().LMS_BASE_URL}</p>
       </div>
     </main>

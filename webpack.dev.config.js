@@ -1,4 +1,5 @@
 const { createConfig } = require('@edx/frontend-build');
+// eslint-disable-next-line import/no-extraneous-dependencies
 const { ModuleFederationPlugin } = require('webpack').container;
 
 const deps = require('./package.json').dependencies;
@@ -9,10 +10,11 @@ module.exports = createConfig('webpack-dev', {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'pluginTest',
+      name: 'plugin',
       filename: 'remoteEntry.js',
       exposes: {
-        './PluginTestPage': './src/plugin/PluginTestPage',
+        './PluginOne': './src/plugin-one/PluginOne',
+        './PluginTwo': './src/plugin-two/PluginTwo',
       },
       shared: {
         react: {

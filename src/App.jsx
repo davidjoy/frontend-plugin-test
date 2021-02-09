@@ -11,7 +11,8 @@ import Header, { messages as headerMessages } from '@edx/frontend-component-head
 import Footer, { messages as footerMessages } from '@edx/frontend-component-footer';
 
 import appMessages from './i18n';
-import PluginTestPage from './plugin/PluginTestPage';
+import PluginOne from './plugin-one/PluginOne';
+import PluginTwo from './plugin-two/PluginTwo';
 
 import './index.scss';
 
@@ -19,7 +20,8 @@ subscribe(APP_READY, () => {
   ReactDOM.render(
     <AppProvider>
       <Header />
-      <PluginTestPage />
+      <PluginOne />
+      <PluginTwo />
       <Footer />
     </AppProvider>,
     document.getElementById('root'),
