@@ -1,8 +1,6 @@
-const path = require('path');
 const { createConfig } = require('@edx/frontend-build');
 const { ModuleFederationPlugin } = require('webpack').container;
 
-const PUBLIC_PATH = process.env.PUBLIC_PATH || '/';
 const deps = require('./package.json').dependencies;
 
 module.exports = createConfig('webpack-dev', {
@@ -35,17 +33,4 @@ module.exports = createConfig('webpack-dev', {
       },
     }),
   ],
-  devServer: {
-    host: '0.0.0.0',
-    port: process.env.PORT || 7331,
-    historyApiFallback: {
-      index: path.join(PUBLIC_PATH, 'index.html'),
-    },
-    dev: {
-      publicPath: PUBLIC_PATH,
-    },
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-  },
 });
