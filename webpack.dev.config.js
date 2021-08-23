@@ -11,10 +11,12 @@ module.exports = createConfig('webpack-dev', {
   plugins: [
     new ModuleFederationPlugin({
       name: 'plugin',
-      filename: 'remoteEntry.js',
+      filename: 'modules.js',
       exposes: {
-        './PluginOne': './src/plugin-one/PluginOne',
-        './PluginTwo': './src/plugin-two/PluginTwo',
+        './Pomodoro': './src/plugins/pomodoro/Pomodoro',
+        './Banner': './src/plugins/banner/Banner',
+        './Discussions': './src/plugins/discussions/Discussions',
+        './Calendly': './src/plugins/calendly/Calendly',
       },
       shared: {
         react: {
@@ -31,6 +33,9 @@ module.exports = createConfig('webpack-dev', {
         '@edx/frontend-platform': {
           requiredVersion: deps['@edx/frontend-platform'],
           singleton: true,
+        },
+        '@edx/paragon': {
+          requiredVersion: deps['@edx/paragon'],
         },
       },
     }),

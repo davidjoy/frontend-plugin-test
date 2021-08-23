@@ -11,8 +11,10 @@ import Header, { messages as headerMessages } from '@edx/frontend-component-head
 import Footer, { messages as footerMessages } from '@edx/frontend-component-footer';
 
 import appMessages from './i18n';
-import PluginOne from './plugin-one/PluginOne';
-import PluginTwo from './plugin-two/PluginTwo';
+import Banner from './plugins/banner/Banner';
+import Calendly from './plugins/calendly/Calendly';
+import Discussions from './plugins/discussions/Discussions';
+import './plugins/pomodoro/Pomodoro';
 
 import './index.scss';
 
@@ -20,8 +22,9 @@ subscribe(APP_READY, () => {
   ReactDOM.render(
     <AppProvider>
       <Header />
-      <PluginOne />
-      <PluginTwo />
+      <Banner />
+      <Calendly />
+      <Discussions unit={{ title: 'Test Unit' }} />
       <Footer />
     </AppProvider>,
     document.getElementById('root'),
